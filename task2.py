@@ -100,8 +100,7 @@ class SHA256:
             0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19
         ]
         
-        self.k = [0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5]  # Shortened for brevity
-        
+        self.k = [0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5]  
     def _rotr(self, x: int, n: int) -> int:
         return ((x >> n) | (x << (32 - n))) & 0xFFFFFFFF
 
