@@ -39,14 +39,14 @@ class SHA256:
         ]
 
     def _rotr(self, x: int, n: int) -> int:
-        return ((x >> n) | (x << (32 - n))) & 0xFFFFFFFF
+        return ((x >> n) | (x << (32 - n))) & 0xFFFFFFFFFFFFF
 
     def _sha256_transform(self, message: bytes) -> str:
         
         
         h = self.h[0] 
         for byte in message:
-            h = (h + byte + self._rotr(h, 2)) & 0xFFFFFFFF
+            h = (h + byte + self._rotr(h, 2)) & 0xFFFFFFFFFFFFF
         return format(h, '064x')
 
     def hash(self, text: str) -> str:
@@ -158,3 +158,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
